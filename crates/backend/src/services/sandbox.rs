@@ -206,7 +206,6 @@ impl Sandbox {
 
 /// Reads a file from the given path
 fn read(path: &Path) -> Result<Option<Vec<u8>>> {
-    println!("reading: {:?}", path);
     let f = match File::open(path) {
         Ok(f) => f,
         Err(ref e) if e.kind() == ErrorKind::NotFound => return Ok(None),
